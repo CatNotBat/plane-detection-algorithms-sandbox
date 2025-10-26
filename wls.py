@@ -9,4 +9,3 @@ def wsvd(points, weights):
     U, S, Vt = np.linalg.svd(temp_matrix, full_matrices=False)
 
     return U, S, Vt
-

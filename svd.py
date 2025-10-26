@@ -15,6 +15,6 @@ def svd(points: np.ndarray):
     centered_points = points - np.mean(points, axis=0)
 
     # Perform SVD
-    U, S, Vt = np.linalg.svd(centered_points, full_matrices=False)
+    u, s, vt = np.linalg.svd(centered_points, full_matrices=False)
 
-    return U, S, Vt
+    return u, s, vt

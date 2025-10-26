@@ -1,13 +1,11 @@
+import time
 import numpy as np
 from ransac import ransac
-import time
 from svd import svd
 
 if __name__ == "__main__":
     ITERATIONS = 5000
     DISTANCE_THRESHOLD = 0.05
-    best_inliers = 0
-    best_plane = None
     start_time = time.time()
 
     points = np.loadtxt("my_test_plane.xyz")
