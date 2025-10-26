@@ -37,4 +37,4 @@ if __name__ == "__main__":
     point_cloud = generate_plane_test_data(num_inliers=2000, num_outliers=5000, noise_std_dev=0.3)
     save_points_to_xyz(point_cloud, "my_test_plane.xyz")
     pcd = o3d.io.read_point_cloud("my_test_plane.xyz", format='xyz')
-    o3d.visualization.draw_geometries([pcd])
+    o3d.visualization.draw_geometries([pcd]) # pylint: disable=E1101

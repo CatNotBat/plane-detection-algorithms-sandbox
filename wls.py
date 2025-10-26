@@ -6,6 +6,6 @@ def wsvd(points, weights):
     centered_points = points - center_of_mass
     temp_matrix = centered_points * np.sqrt(weights[:, np.newaxis])
 
-    U, S, Vt = np.linalg.svd(temp_matrix, full_matrices=False)
+    u, s, vt = np.linalg.svd(temp_matrix, full_matrices=False)
 
-    return U, S, Vt
+    return u, s, vt 
