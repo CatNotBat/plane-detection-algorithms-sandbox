@@ -16,12 +16,13 @@ def _get_plane_from_points(p1: float, p2: float, p3: float):
     return a, b, c, d
 
 
-def _get_points_closer_than_distance(plane: tuple, points: np.ndarray, distance_threshold: float):
-    """Get points closer than a certain distance from the plane."""
+def find_inliers_indices(plane, points, distance_threshold):
+    # 1. Calculate distance for every point
     distances = _get_distance_from_plane(plane, points)
-    close_points = points[distances < distance_threshold]
-    return close_points
 
+    inlier_mask = distances < distance_threshold
+    inlier_indices = np.where(inlier_mask)[0] 
+    return inlier_indices
 
 def _get_distance_from_plane(plane: tuple, points: np.ndarray):
     """Calculate the perpendicular distance from points to the plane."""
